@@ -9,7 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/ads")
-@CrossOrigin(origins = "https://social-media-analytics-dashboard.onrender.com")
+@CrossOrigin(origins = "http://localhost:3000")
 public class AdController {
 
     @Autowired
