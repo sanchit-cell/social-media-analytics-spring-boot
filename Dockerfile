@@ -1,14 +1,13 @@
-# Use the official OpenJDK image as a base
-FROM openjdk:17-jdk-alpine
-
-# Set the working directory in the container
+# Stage 1: Build the application
+FROM maven:3.8.5-openjdk-17-slim AS build
 WORKDIR /app
+COPY pom.xml .
+COPY src ./src
+RUN mvn clean package
 
-# Copy the packaged jar file into the container
-COPY target/social-media-analytics-0.0.1-SNAPSHOT.jar app.jar
-
-# Expose the port that the app runs on
+# Stage 2: Run the application
+FROM openjdk:17-jdk-alpine
+WORKDIR /app
+COPY --from=build /app/target/your-app-name.jar app.jar
 EXPOSE 8080
-
-# Define the command to run the app
 ENTRYPOINT ["java","-jar","app.jar"]
