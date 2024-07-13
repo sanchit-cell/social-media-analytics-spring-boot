@@ -1,12 +1,14 @@
-# Stage 1: Build stage
-FROM maven:3.8.5-openjdk-17 AS build
-WORKDIR /app
-COPY . .
-RUN mvn clean package -DskipTests
-
-# Stage 2: Runtime stage
+# Use the official OpenJDK image as a base
 FROM openjdk:17-jdk-alpine
+
+# Set the working directory in the container
 WORKDIR /app
-COPY --from=build /target/SocialMediaAnalytics-0.0.1-SNAPSHOT.jar SocialMediaAnalytics.jar
+
+# Copy the packaged jar file into the container
+COPY target/social-media-analytics-0.0.1-SNAPSHOT.jar app.jar
+
+# Expose the port that the app runs on
 EXPOSE 8080
-ENTRYPOINT ["java", "-jar", "SocialMediaAnalytics.jar"]
+
+# Define the command to run the app
+ENTRYPOINT ["java","-jar","app.jar"]
