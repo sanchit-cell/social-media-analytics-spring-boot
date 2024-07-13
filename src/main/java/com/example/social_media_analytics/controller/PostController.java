@@ -9,7 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/posts")
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "https://social-media-analytics-dashboard.onrender.com")
 public class PostController {
 
     @Autowired
