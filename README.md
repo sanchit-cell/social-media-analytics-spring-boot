@@ -1,6 +1,6 @@
 
 
-```markdown
+
 # Social Media Analytics Dashboard Backend
 
 This project is a backend service for a Social Media Analytics Dashboard. It is built using Spring Boot and provides APIs to manage users, posts, ads, and promotions. The backend uses an in-memory H2 database to store and retrieve data.
@@ -113,9 +113,4 @@ src/
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-```
 
-### Conclusion
-
-This `README.md` file provides a comprehensive overview of your Spring Boot backend project, including setup instructions, API endpoints, and project structure. It will help other developers understand and use your project effectively.
