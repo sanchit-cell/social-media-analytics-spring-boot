@@ -10,7 +10,8 @@ import java.util.List;
 @RestController
 @RequestMapping("/promotions")
 // @CrossOrigin(origins = "http://localhost:3000")
-@CrossOrigin(origins = "*")
+// @CrossOrigin(origins = "*")
+@CrossOrigin(origins = "https://social-media-analytics-dashboard-3y1h.onrender.com")
 public class PromotionController {
 
     @Autowired
